@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :exercise_stats
   resources :exercise_names
   devise_for :users, controllers: {
-    sessions: 'users/sessions'
+    sessions: 'users/sessions',
   }
 
   root "main#index"

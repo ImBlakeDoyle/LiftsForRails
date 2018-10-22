@@ -1,6 +1,8 @@
 <h1> Lifts Tracker </h1>
 <% if current_user%>
+    <div>Signed in as <%= current_user.inspect %></div>
     <%= link_to 'Sign out', destroy_user_session_path, method: :delete%>
+    <%= link_to 'Edit profile', user_registration_path, method: :patch%>
 <% else %>
     <li><%= link_to 'Log in', new_user_session_path %></li>
     <li><%= link_to 'Sign up', new_user_registration_path %></li>
