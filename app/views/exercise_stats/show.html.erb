@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @exercise_stat.weight %>
+</p>
+
+<p>
+  <strong>Reps:</strong>
+  <%= @exercise_stat.reps %>
+</p>
+
+<p>
+  <strong>Increase:</strong>
+  <%= @exercise_stat.increase %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @exercise_stat.comments %>
+</p>
+
+<%= link_to 'Edit', edit_exercise_stat_path(@exercise_stat) %> |
+<%= link_to 'Back', exercise_stats_path %>

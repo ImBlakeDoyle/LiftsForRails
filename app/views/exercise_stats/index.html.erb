@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Exercise Stats</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Weight</th>
+      <th>Reps</th>
+      <th>Increase</th>
+      <th>Comments</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @exercise_stats.each do |exercise_stat| %>
+      <tr>
+        <td><%= exercise_stat.weight %></td>
+        <td><%= exercise_stat.reps %></td>
+        <td><%= exercise_stat.increase %></td>
+        <td><%= exercise_stat.comments %></td>
+        <td><%= link_to 'Show', exercise_stat %></td>
+        <td><%= link_to 'Edit', edit_exercise_stat_path(exercise_stat) %></td>
+        <td><%= link_to 'Destroy', exercise_stat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Exercise Stat', new_exercise_stat_path %>
