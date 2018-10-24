@@ -8,8 +8,14 @@
     <%= link_to 'Edit profile', user_registration_path, method: :patch%>
 
     <% @musclegroups.each do |muscle|%>
-    <li><%= muscle.name%></li>
+        <select id="#{@exercisenames.name}" name="#{@exercisenames.name}">
+            <%= @exercisenames.each do |musclex|%>
+                <option value="#{musclex.name}"><%= musclex.name %></option>
+            <%end%>
+        </select>
+    <%# <%= muscle.name%> 
     <% end %>
+
 <% else %>
     <li><%= link_to 'Log in', new_user_session_path %></li>
     <li><%= link_to 'Sign up', new_user_registration_path %></li>
