@@ -5,4 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-musclegroup = MuscleGroup.create([{name: 'Chest'}, {name: 'Back'}, {name: 'Triceps'}, {name: 'Biceps'}, {name: 'Legs'}, {name: 'Shoulders'}])
+User.create(name: 'Blake', email: 'blake@blake.com', password: 'blake123', password_confirmation: 'blake123')
+MuscleGroup.create([{name: 'Chest'}, {name: 'Back'}, {name: 'Triceps'}, {name: 'Biceps'}, {name: 'Legs'}, {name: 'Shoulders'}])
+# ExerciseName.create(name: 'Benchpress', muscle_group_id: 1)
+
+@chestexercisearray = ['Benchpress', 'Decline Benchpress', 'Incline Benchpress']
+
+def chest
+    @chestexercisearray.each do |x|
+        ExerciseName.create(name: x, muscle_group_id: 1)
+    end
+end
+
+chest
