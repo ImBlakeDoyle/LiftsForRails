@@ -6,6 +6,10 @@
     </div>
     <%= link_to 'Sign out', destroy_user_session_path, method: :delete%>
     <%= link_to 'Edit profile', user_registration_path, method: :patch%>
+
+    <% @musclegroups.each do |muscle|%>
+    <li><%= muscle.name%></li>
+    <% end %>
 <% else %>
     <li><%= link_to 'Log in', new_user_session_path %></li>
     <li><%= link_to 'Sign up', new_user_registration_path %></li>
